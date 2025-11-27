@@ -1,0 +1,87 @@
+---
+import Button from "../components/Button.astro";
+import Counter from "../components/Counter";
+import Heading from "../components/Heading.astro";
+
+const headings = [
+  {
+    tag: "h1",
+    size: "h2",
+    text: "Heading 1",
+  },
+  {
+    tag: "h2",
+    size: "h5",
+    text: "Heading 2",
+  },
+  {
+    tag: "h4",
+    size: "h1",
+    text: "Heading 3",
+  },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Components</title>
+  </head>
+  <body>
+    <!-- {
+      headings.map((heading) => {
+        return (
+          <Heading tag={heading.tag} size={heading.size}>
+            {heading.text.toLocaleUpperCase()}
+          </Heading>
+        );
+      })
+    } -->
+	<Heading tag="h2" size="h3" classes="red"> Hi </Heading>
+    <Button id="my-id2" aria-label="click me btn"> Click me </Button>
+	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto praesentium id, numquam earum eos suscipit ipsum sapiente nesciunt ab quas laborum repellendus nam amet asperiores, possimus animi tempora quis reiciendis!</p>
+	<p>Excepturi numquam natus molestiae pariatur eaque, consequuntur officiis voluptate eligendi reiciendis dolores aliquid architecto odio laboriosam eveniet non cum ratione rerum magni quisquam quos corrupti eum. Optio harum quas earum?</p>
+	<p>Aliquid fuga consequatur iusto tenetur in dolores beatae reiciendis facilis quam ex accusamus, quia soluta nobis vel id eius omnis voluptas iste? Officiis, modi repellendus voluptate id omnis cum libero.</p>
+	<p>Hic nemo voluptas fugiat expedita est molestiae sed consequuntur nam placeat? Ab numquam nulla neque ipsam dignissimos. In rem maiores molestias, facere sit soluta pariatur assumenda, consequatur modi at possimus.</p>
+	<p>Est enim tenetur corporis, at sint pariatur nam. Ab sit similique rem unde obcaecati modi est, suscipit culpa expedita vitae. Itaque quibusdam neque cum aspernatur totam quasi distinctio fugiat non!</p>
+	<p>Sint, consequuntur quibusdam. Reiciendis aspernatur rem ab quaerat sunt libero voluptate, nulla quidem pariatur dolor veniam aliquam ipsam expedita, officiis quisquam debitis, laborum delectus. Commodi nihil consectetur quis sunt placeat.</p>
+	<p>Quisquam, excepturi voluptatum. Eius blanditiis soluta earum est ipsa magnam neque ipsum ducimus id, eligendi excepturi, incidunt, suscipit harum dolore similique iusto perferendis pariatur? Eius consectetur numquam deleniti fugit odit?</p>
+	<p>Veniam, hic amet vel consequatur maiores quas commodi nesciunt voluptates iure alias facilis obcaecati quo aperiam odit libero iusto omnis pariatur distinctio nemo ab maxime possimus? Quia molestiae hic non.</p>
+	<p>Temporibus, sunt neque. Quaerat architecto expedita dolore recusandae consequatur, nesciunt impedit sequi illo rerum. Labore, similique qui recusandae reiciendis quas sint veniam cum necessitatibus ducimus debitis, atque nesciunt molestiae assumenda.</p>
+	<p>Illo soluta ut doloremque tenetur quam necessitatibus! Dignissimos nemo placeat voluptate commodi quaerat temporibus, hic non voluptas, laboriosam debitis fugit corporis fuga iure? Enim quasi perferendis consectetur nostrum? Quidem, veritatis.</p>
+	<p>Consectetur adipisci a blanditiis natus maxime? Eaque nam aliquam maxime possimus. Illo, nam. Quam, voluptate ipsa? Consequatur ipsum distinctio iure iste laborum, corrupti, in itaque, aliquam corporis nesciunt nam fugiat.</p>
+	<p>Ducimus autem odit, deleniti mollitia qui omnis soluta corporis eligendi incidunt laboriosam ut quo eum maiores neque at praesentium recusandae dolorem quos velit repellat porro. Minus ex quod voluptatum inventore.</p>
+	<p>Sed accusamus quidem, commodi ipsa amet debitis optio saepe culpa? Rem, mollitia molestias, excepturi esse eum asperiores ad adipisci ab totam nemo sit ex? Tenetur sint quidem quam possimus dolores.</p>
+	<p>Nobis tempore, ullam rerum ipsum necessitatibus sequi ab velit exercitationem! Provident ex repellendus ipsum est odit nihil error distinctio blanditiis dolore quam quasi, nisi aut cupiditate magnam molestiae tempore eaque?</p>
+	<p>Delectus deserunt tempore enim sed explicabo autem praesentium consequatur nostrum itaque facere possimus doloribus porro voluptatibus, fugiat nam voluptate nihil at eius sint ipsam? Dolore cumque quisquam quae adipisci ipsam.</p>
+	<p>Qui voluptas dolorem officiis quo repellendus possimus sed ex labore debitis. Neque ipsum unde nulla saepe qui accusamus ab, animi culpa at suscipit sit non alias sunt consequatur enim quo!</p>
+	<p>Ipsum laudantium eaque cum praesentium molestiae officia quam libero et ut similique, cupiditate perferendis, in inventore aliquam maxime at atque nostrum accusamus necessitatibus asperiores dicta dolor! Debitis cumque ipsam voluptatibus.</p>
+	<p>Officia, illum quidem deleniti distinctio asperiores qui consequatur odit, laboriosam vero, culpa velit? Esse, commodi, reiciendis deleniti enim aliquam dolor iste laudantium doloremque officiis, libero voluptate. Odit facilis iusto officia?</p>
+	<p>Accusamus ipsa blanditiis rem natus itaque incidunt accusantium eveniet omnis sit voluptatum, recusandae eaque eligendi exercitationem praesentium ullam, vel, voluptatem nostrum earum tempore placeat. Ipsum animi aspernatur tempore recusandae nihil?</p>
+	<p>Nihil eligendi, praesentium libero doloremque natus reiciendis obcaecati beatae enim odio consectetur, ratione similique accusamus cupiditate quod laboriosam inventore quasi in dolores, dicta voluptate molestiae quo incidunt. Enim, libero incidunt.</p>
+	<p>Accusamus, facilis sunt, voluptatum porro nobis eligendi iste laboriosam odio impedit iure quia, deleniti exercitationem ipsa! Adipisci fugit vel veniam velit libero odit iure. Obcaecati, aperiam. Sequi at earum incidunt.</p>
+	<p>Asperiores soluta quas eveniet quisquam ullam perspiciatis, quibusdam rerum dolorem quos nobis voluptates aspernatur. Minima asperiores est sunt atque. Odio, quasi natus? Velit tempore corporis dicta sit, neque dolorum harum.</p>
+	<p>Qui, aperiam! Mollitia reiciendis fugit ullam quis. Delectus minus laborum eveniet eos ex aspernatur velit. Voluptatem, earum culpa non consequatur cumque omnis consectetur veniam ipsam blanditiis at suscipit. Ad, dolore.</p>
+	<p>Accusantium ab ipsam perspiciatis. Eum eaque odit magnam cumque consectetur at maxime! Ipsa ad at, doloribus, beatae dignissimos dolorum, pariatur nobis culpa facilis omnis iure laboriosam ab consequatur natus ex?</p>
+	<p>Quae temporibus eaque magnam expedita enim eius maxime alias molestias, praesentium tempora pariatur dignissimos quisquam quidem unde nihil omnis, quibusdam voluptatibus beatae neque quaerat? Veniam in quasi ab assumenda pariatur!</p>
+	<p>Expedita reiciendis, animi cumque eum veniam, doloremque dolores soluta voluptatem dolore, officia et qui nisi doloribus harum? Nemo sint praesentium, aspernatur totam illo deleniti quisquam hic fuga voluptate, cupiditate architecto.</p>
+	<p>Voluptatibus fuga impedit qui libero. Magni excepturi qui minus quam quod dolor dignissimos nesciunt fugiat, repellat maiores unde id autem consequatur deserunt magnam repudiandae eligendi suscipit maxime perferendis illum cum!</p>
+	<p>Qui culpa fuga vero pariatur, enim, nulla nostrum dolore veniam magni cum corrupti eveniet alias maxime officiis animi cumque labore illum architecto quas minima suscipit itaque. Asperiores quasi labore enim.</p>
+	<p>Odit molestiae consequuntur odio, magni aut accusamus ex reprehenderit cupiditate nam quis libero et corrupti laboriosam. Quam non provident officiis voluptatem ad ipsum commodi aut, vitae possimus nobis aliquid similique!</p>
+	<p>Qui, pariatur ad? Saepe pariatur ullam veniam! Assumenda neque unde optio placeat quasi facere voluptates, accusamus repudiandae nam pariatur vero, dolorum adipisci, quam officiis dolorem cupiditate omnis provident expedita quibusdam!</p>
+	<Counter client:load/>
+  </body>
+  <style>
+    @import "https://unpkg.com/open-props";
+    @import "https://unpkg.com/open-props/normalize.min.css";
+    body {
+      display: grid;
+      place-content: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+  </style>
+</html>

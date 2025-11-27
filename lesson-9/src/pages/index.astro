@@ -1,0 +1,16 @@
+---
+import Card from '../components/Card.astro';
+import data from '../data/data.json';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <meta name="generator" content={Astro.generator} /> -->
+		<title>Document</title>
+	</head>
+	<body>
+		{data.map((card) => <Card data={card}/>)}
+	</body>
+</html>
