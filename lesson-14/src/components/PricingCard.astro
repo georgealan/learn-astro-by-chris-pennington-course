@@ -1,0 +1,158 @@
+---
+import Button from '@/components/Button.astro';
+
+export type CardProps = {
+	tier: string;
+	most_popular: boolean;
+	amount_per_month: number;
+	title: string;
+	description: string;
+	btn_text: string;
+	features: {
+		title: string;
+		checked: boolean;
+	}[];
+};
+
+type Props = {
+	cardData: CardProps	
+};
+
+const { cardData } = Astro.props;
+
+const { 
+	tier,
+	most_popular,
+	amount_per_month,
+	title,
+	description,
+	btn_text,
+	features,	
+} = cardData;
+
+---
+
+<article class:list={[{ "dark-shadow": most_popular }]}>
+	<p class:list={["tier", tier.toLowerCase()]}>{tier}</p>
+	{most_popular && <p class="badge">Most Popular</p>}
+	<div class="details">
+		<div class="amt">
+			<span class="sign">$</span>
+			<span class="num">{amount_per_month}</span>
+			{amount_per_month > 0 && <span class="mo">/mo</span>}
+		</div>
+		<h3 class="title">{title}</h3>
+		<p class="desc">{description}</p>
+	</div>
+	<Button id={tier.toLowerCase()} theme={tier}>{btn_text}</Button>
+	<ul class="features">
+		{features.map((feature) => (
+			<li class="feature">
+				{/* icon */}
+				{feature.checked ? (
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15" class="green"><!-- Icon from Radix Icons by WorkOS - https://github.com/radix-ui/icons/blob/master/LICENSE --><path fill="currentColor" d="M10.602 3.908a.626.626 0 0 1 1.046.684l-4.25 6.5a.626.626 0 0 1-.944.12l-2.75-2.5l-.084-.094a.626.626 0 0 1 .823-.906l.103.075l2.207 2.006z"/></svg>
+				) : 
+					<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 15 15" class="red"><!-- Icon from Radix Icons by WorkOS - https://github.com/radix-ui/icons/blob/master/LICENSE --><path fill="currentColor" d="M10.969 3.219a.574.574 0 1 1 .812.812L8.313 7.5l3.468 3.469l.074.09a.575.575 0 0 1-.796.796l-.09-.074L7.5 8.312l-3.469 3.47a.574.574 0 1 1-.812-.813L6.688 7.5l-3.47-3.469l-.073-.09a.575.575 0 0 1 .796-.797l.09.075L7.5 6.687z"/></svg>}
+
+				{/* text */}
+				<p>{feature.title}</p>
+			</li>
+		))}
+	</ul>
+</article>
+
+<style>
+	article {
+		flex: 1 1 28%;
+		background-color: var(--clr-bkg);
+		box-shadow: var(--shadow--light);
+		border-radius: var(--rounded);
+		display: grid;
+		gap: var(--space--xl);
+		padding: var(--space--xxl) var(--space--lg) var(--space--lg);
+		position: relative;
+		&.dark-shadow {
+			box-shadow: var(--shadow--dark);
+		}
+	}
+
+	.tier {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		padding-block: var(--space--sm);
+		border-top-right-radius: var(--rounded);
+		border-top-left-radius: var(--rounded);
+		text-transform: uppercase;
+		--local_background: var(--clr-bkg);
+		--local_color: var(--clr-accent-purple);
+		color: var(--local_color);
+		background-color: var(--local_background);
+		&.pro {
+			--local_background: var(--clr-accent-purple);
+			--local_color: var(--clr-bkg);
+		}
+		&.enterprise {
+			--local_background: var(--clr-accent-yellow);
+			--local_color: var(--clr-bkg);
+		}
+	}
+
+	.badge {
+		background-color: var(--clr-text);
+		color: var(--clr-bkg);
+		padding: var(--space--sm);
+		max-width: fit-content;
+		justify-self: center;
+		text-transform: uppercase;
+		font-size: var(--fs--xs);
+	}
+
+	.details {
+		display: grid;
+		gap: var(--space--sm);
+		place-items: center;
+		text-align: center;
+
+		.amt {
+			display: grid;
+			grid-template-columns: repeat(3, auto);
+			max-width: fit-content;
+			.num {
+				font-size: var(--fs--lg);
+				line-height: 1;
+			}
+			.mo {
+				align-self: end;
+			}
+		}
+
+		.title {
+			font-size: var(--fs--md);
+			text-transform: uppercase;
+		}
+
+		.desc {
+			max-width: 60%;
+		}
+	}
+
+	.features {
+		list-style: none;
+		margin-inline: auto;
+		.feature {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			.green {
+				color: var(--clr-accent-green);
+				width: 1rem;
+			}
+			.red {
+				color: var(--clr-accent-red);
+				width: 1rem;
+			}
+		}
+	}
+
+</style>
