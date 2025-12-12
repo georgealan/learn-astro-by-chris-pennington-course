@@ -1,5 +1,5 @@
 ---
-title: Hello, World
+title: Post 2 Title
 layout: "../../layouts/BlogLayout.astro"
 ---
 

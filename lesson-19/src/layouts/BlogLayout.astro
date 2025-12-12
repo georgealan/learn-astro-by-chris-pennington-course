@@ -5,5 +5,6 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout title={frontmatter.title}>
+  <a href="/blog">← Back to blog</a>
   <slot />
 </BaseLayout>
